@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Food Corner </h1>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <!--<button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>-->
+  <button class="tablinks">Client</button>
+  <button class="tablinks">Products</button>
+  <button class="tablinks">Cart</button>
+</div>
+<div id="Hello" class="tabcontent">
+<h3>Welcome to Food Corner's Virtual Grocery Store!</h3>
+<br>
+ <h4>Beware! You are what you eat. Choose wisely...</h4>
+ <br>
+ <p>To continue, click Next.</p>
+</div>
+
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+	<div class="category"> Choose filter to apply: </div>
+	<input id="NutFree" type="checkbox">Nut Free<br>
+	<input id="LactoseFree" type="checkbox">Lactose Free<br>
+	<input id="Organic" type="checkbox">Organic<br>
+	<input id="NonOrganic" type="checkbox">Non Organic<br>
+	<input id="None" type="checkbox">No Filter<br>
+	<br>
+
+</div>
+
+<div id="Products" class="tabcontent" style="display:none">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your filters.</p>
+	 <div class="chooseItems"> Choose items to buy: </div>
+	 <br>
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent" style="display:none">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<div id="Goodbye" class="tabcontent" style="display:none">
+  <h3>Goodbye</h3>
+  <p>See you later aligator!</p>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+
+<footer>
+	<script> openInfo(event,"Hello"); </script>
+	<button id="ButtonPrevious"  disabled="disabled" name="" onclick="handleWizardPrevious()">< Back</button>
+	<button id="ButtonNext"name="Step2" onclick="handleWizardNext()">Next ></button>
+	<button id="ButtonCancel" name="" onclick="handleWizardCancel()">Cancel</button>
+
+	<div>
+ 		<h6>Site created by Marc Tremblay</h6>
+ 	</div>
+
+</footer>
+
+
+</html>
